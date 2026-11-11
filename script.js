@@ -1,6 +1,7 @@
 /* JavaScript følger HTML-rækkefølgen.
    1. Navigation: mobilmenu.
    2. Projektside: semesterfiltre.
+   3. CV: vis en side i stor størrelse.
    Resten af indholdet er almindelig HTML og CSS. */
 
 // 1. HEADER / NAVIGATION
@@ -89,4 +90,25 @@ if (filterGroup && workCards.length && filterStatus && emptyProjects) {
 
     window.addEventListener('popstate', () => filterProjects(readSemesterFromUrl(), false));
     filterProjects(readSemesterFromUrl(), false);
+}
+
+// 3. CV — forstør forhåndsvisningen. Uden JS åbnes billedlinket direkte.
+const cvDialog = document.querySelector('.cv-dialog');
+
+if (cvDialog && typeof cvDialog.showModal === 'function') {
+    const cvImage = cvDialog.querySelector('img');
+    const cvTitle = cvDialog.querySelector('h2');
+
+    document.querySelectorAll('.cv-preview').forEach((preview) => {
+        preview.setAttribute('aria-haspopup', 'dialog');
+        preview.addEventListener('click', (event) => {
+            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            event.preventDefault();
+            cvTitle.textContent = `CV — ${preview.querySelector('span').textContent}`;
+            cvImage.src = preview.href;
+            cvImage.alt = cvTitle.textContent;
+            cvDialog.showModal();
+            cvDialog.scrollTop = 0;
+        });
+    });
 }

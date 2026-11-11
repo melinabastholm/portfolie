@@ -218,6 +218,7 @@ main:has(.about) + .site-footer { background-color: var(--pink-light); }
 .about-detail-copy { flex: 1; min-width: 0; max-width: 660px; font-size: 16px; line-height: 1.9; }
 .about-detail-copy p + p { margin-top: 18px; }
 .about-greeting { font-size: 19px; line-height: 1.6; }
+.about-detail-copy > .button { margin-top: 22px; }
 /* ABOUT ME 3. Kreativitet — teksten over collagen. */
 .about-creativity { margin-top: 56px; }
 .about-creativity h2 { margin-bottom: 20px; }
@@ -232,6 +233,19 @@ main:has(.about) + .site-footer { background-color: var(--pink-light); }
 .contact-list { display: flex; flex-wrap: wrap; gap: 24px; }
 .contact-item { flex: 0 0 calc(50% - 12px); padding-block: 25px; border-top: 1px solid #153c9133; }
 .contact-item h2 { font-size: 26px; margin-bottom: 12px; }
+
+/* CV — små forhåndsvisninger, efterfulgt af den store visning. */
+.cv-pages { display: flex; gap: clamp(12px, 3vw, 28px); }
+.cv-preview { flex: 0 0 min(45%, 210px); min-width: 0; color: var(--heading-blue); cursor: zoom-in; }
+.cv-preview img { width: 100%; height: auto; border: 1px solid #153c9133; border-radius: 10px; }
+.cv-preview span { display: block; margin-top: 10px; }
+.cv-preview:hover span { text-decoration: underline; }
+.cv-dialog { width: min(94vw, 820px); max-height: 92dvh; padding: 0; overflow: auto; border: 0; border-radius: 14px; background: var(--cream); }
+.cv-dialog::backdrop { background: #17233acc; }
+.cv-dialog-bar { position: sticky; top: 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 16px; background: var(--cream); }
+.cv-dialog-bar h2 { font-size: 24px; }
+.cv-dialog-bar button { border: 0; cursor: pointer; }
+.cv-dialog > img { width: 100%; height: auto; }
 @media (max-width: 700px) {
     .subpage { padding-block: 40px 75px; }
     .subpage .project-list { flex-direction: column; overflow: visible; }
