@@ -1,0 +1,249 @@
+/* INDHOLD — følger rækkefølgen i HTML:
+   0. Fælles regler  1. Navigation  2. Hero  3. Projekter
+   4. Visual diary   5. Om mig     6. Footer  7. Undersider
+   Mobilregler står under den sektion, de hører til. */
+
+/* 0. FÆLLES REGLER — skift sidens farver her */
+:root {
+    --font-heading: "DM Serif Display", Georgia, serif;
+    --font-body: "Poppins", Arial, sans-serif;
+    --cream: #f6f0ea;
+    --pink-light: #f5e2e3;
+    --pink: #f891b6;
+    --pink-text: #cf2469;
+    --blue: #153c91;
+    --heading-blue: #004180;
+    --text: #202020;
+    --grey: #d9d9d9;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--cream); color: var(--text); font-family: var(--font-body); font-size: 14px; line-height: 1.5; }
+h1, h2, h3, p, figure { margin: 0; }
+h1, h2, h3, h4, h5, h6 { color: var(--heading-blue); font-family: var(--font-heading); font-weight: 400; line-height: 1.15; }
+h1 { font-size: clamp(40px, 5vw, 64px); }
+h2 { font-size: 38px; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+img { display: block; max-width: 100%; object-fit: cover; }
+svg { width: 24px; height: 24px; }
+.container { width: min(100% - 88px, 1160px); margin-inline: auto; }
+.section-padding { padding-block: 42px 50px; }
+.button { display: inline-flex; justify-content: center; align-items: center; gap: 5px; width: fit-content; min-height: 38px; padding: 8px 14px; border-radius: 14px; background: var(--blue); color: white; font-size: 15px; line-height: 1.4; transition: background-color .2s, transform .2s; }
+.button:hover { background: var(--heading-blue); transform: translateY(-2px); }
+.button-pink { background: var(--pink); color: #191919; }
+.button-pink:hover { background: #f77fa9; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--heading-blue); outline-offset: 5px; }
+.text-pink { color: var(--pink-text); }
+.image-placeholder { display: flex; justify-content: center; align-items: center; border-radius: 14px; background: var(--grey); color: #535353; text-align: center; }
+.image-placeholder > span:not(.play-icon) { padding: 16px; font-size: 13px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.skip-link { position: absolute; top: 8px; left: 8px; z-index: 10; padding: 10px; background: var(--cream); transform: translateY(-200%); }
+.skip-link:focus { transform: translateY(0); }
+@media (max-width: 700px) {
+    body { font-size: 13px; }
+    .container { width: calc(100% - 32px); }
+    h2 { font-size: 29px; }
+    .section-padding { padding-block: 26px 30px; }
+    .button { font-size: 13px; min-height: 36px; }
+    .desktop-break { display: none; }
+}
+
+/* 1. HEADER / NAVIGATION */
+.site-header { position: relative; z-index: 5; background: var(--pink-light); }
+/* Navigationen går næsten helt til kanterne, uafhængigt af sidens indholdsbredde. */
+.navigation { display: flex; justify-content: space-between; align-items: center; width: calc(100% - 48px); min-height: 62px; }
+/* Det lille navnelogo genbruges på alle sider. */
+.site-logo { display: flex; align-items: center; flex-shrink: 0; width: 110px; margin-right: auto; padding-block: 4px; }
+.site-logo img { width: 100%; height: auto; object-fit: contain; }
+.nav-links { display: flex; align-items: center; gap: 28px; margin: 0; padding: 0; list-style: none; }
+.nav-links a { display: block; padding: 5px 14px; border-radius: 18px; font-size: 14px; text-transform: uppercase; }
+.nav-links a:hover, .nav-links a[aria-current="page"] { background: var(--pink); }
+.menu-toggle { display: none; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 3px; border: 0; background: transparent; cursor: pointer; }
+/* Dit eget menuikon — knappens skjulte tekst fortæller, om menuen kan åbnes eller lukkes. */
+.menu-toggle img { width: 100%; height: auto; object-fit: contain; }
+@media (max-width: 700px) {
+    .navigation { width: calc(100% - 16px); min-height: 54px; flex-wrap: wrap; }
+    .nav-links { flex-wrap: wrap; justify-content: center; gap: 3px; padding-block: 8px; }
+    .nav-links a { padding: 7px 10px; font-size: 12px; }
+    /* Uden JS er links synlige. Med JS vises fold-ud-menuen. */
+    .js .menu-toggle:not([hidden]) { display: flex; }
+    .js .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; padding: 14px 16px; background: var(--pink-light); box-shadow: 0 8px 12px #0000000d; }
+    .js .nav-links.is-open { display: flex; flex-direction: column; align-items: stretch; }
+    .js .nav-links a { text-align: center; }
+}
+
+/* 2. HERO — navn til venstre og showreel til højre */
+.hero { position: relative; isolation: isolate; overflow: hidden; }
+.hero-inner { display: flex; align-items: center; justify-content: space-between; gap: 60px; min-height: 510px; padding-block: 54px 64px; }
+.hero-copy { flex: 1; min-width: 0; text-align: center; }
+.name { width: min(100%, 440px); margin: 0 auto 32px; line-height: 1; }
+.name img { width: 100%; height: auto; object-fit: contain; }
+.disciplines { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 14px; margin: 0 0 13px; padding: 0; list-style: none; font-family: var(--font-body); font-size: 12px; text-transform: uppercase; }
+.disciplines li + li::before { content: "•"; margin-right: 14px; }
+/* Introen vender skrifttyperne om: fagområder i Poppins, brødtekst i DM Serif Display. */
+.hero-tagline { font-family: var(--font-heading); font-size: 14px; font-weight: 400; font-style: italic; line-height: 1.35; }
+.social-links { display: flex; justify-content: center; gap: 16px; margin-top: 22px; }
+.social-links a { display: flex; justify-content: center; align-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--blue); color: white; }
+.social-links a:hover { background: var(--heading-blue); }
+.social-links svg { width: 24px; height: 24px; }
+.linkedin-icon { font-family: Arial, sans-serif; font-size: 25px; line-height: 1; font-weight: 700; }
+.showreel { flex: 1; position: relative; flex-direction: column; gap: 40px; aspect-ratio: 4 / 3; max-width: 520px; color: #202020; }
+.play-icon { display: flex; align-items: center; justify-content: center; width: 64px; height: 64px; padding-left: 5px; border-radius: 50%; background: white; font-size: 36px; }
+.showreel figcaption { font-size: 16px; }
+.placeholder-note { display: block; margin-top: 4px; font-size: 11px; color: #595959; }
+/* Det blå hjørne ligger bag indholdet nederst til højre. */
+.hero::after { content: ""; position: absolute; z-index: -1; right: -0.5%; bottom: -10px; width: 54%; height: 240px; background: url("assets/bluecorner.png") right bottom / 100% 100% no-repeat; }
+@media (max-width: 1000px) and (min-width: 701px) {
+    .hero-inner { gap: 35px; min-height: 430px; }
+    .disciplines { font-size: 10px; gap: 7px; }
+    .disciplines li + li::before { margin-right: 7px; }
+}
+@media (max-width: 700px) {
+    .hero-inner { flex-direction: column; gap: 30px; min-height: auto; padding-block: 25px 70px; }
+    .hero-copy { width: 100%; }
+    .name { width: min(100% - 24px, 360px); margin-bottom: 25px; }
+    .disciplines { gap: 6px; font-size: clamp(8px, 2.4vw, 11px); margin-bottom: 12px; }
+    .disciplines li + li::before { margin-right: 6px; }
+    .hero-tagline { max-width: 320px; margin-inline: auto; font-size: 12px; }
+    .social-links { margin-top: 18px; gap: 16px; }
+    .showreel { flex: auto; width: min(100% - 30px, 420px); gap: 30px; }
+    .play-icon { width: 48px; height: 48px; font-size: 27px; }
+    .hero::after { width: 118%; height: 140px; bottom: -6px; }
+}
+
+/* 3. PROJECTS — rækken bygges med flexbox */
+.projects { background: var(--pink-light); }
+.projects-inner { display: flex; flex-direction: column; position: relative; }
+.section-heading { display: flex; align-items: center; justify-content: space-between; padding-right: 235px; margin-bottom: 32px; }
+.section-heading p { margin-top: 7px; font-size: 12px; }
+.project-list { display: flex; gap: 50px; }
+.project-card { flex: 1; min-width: 0; }
+.project-card .image-placeholder, .project-card > img { width: 100%; aspect-ratio: 1.08; border-radius: 14px; }
+.project-card > img { height: auto; object-fit: contain; background: var(--cream); }
+.project-card h3 { margin-top: 12px; color: var(--heading-blue); font-family: var(--font-heading); font-size: 20px; }
+.project-card p { margin-top: 2px; font-size: 12px; }
+.projects-button { position: absolute; top: 4px; right: 0; }
+@media (max-width: 1000px) { .project-list { gap: 24px; } }
+@media (max-width: 700px) {
+    .section-heading { padding-right: 0; margin-bottom: 22px; }
+    .project-list { gap: 14px; overflow-x: auto; padding-bottom: 12px; scroll-snap-type: x mandatory; }
+    .project-card { flex: 0 0 70%; scroll-snap-align: start; }
+    .project-card h3 { font-size: 19px; }
+    .projects-button { position: static; align-self: center; margin-top: 16px; }
+}
+
+/* 4. VISUAL DIARY — tekst og billeder står på samme række på desktop */
+.diary { padding-block: 64px; }
+.diary-inner { position: relative; display: flex; flex-wrap: wrap; align-items: flex-start; column-gap: 40px; }
+.diary-copy { flex: 0 0 23%; }
+.diary-copy p { margin-top: 24px; font-size: 12px; line-height: 1.5; }
+.diary-photos { display: flex; gap: 25px; flex: 1; min-width: 0; }
+.diary-photos img { flex: 1; min-width: 0; width: 0; height: 235px; border-radius: 14px; }
+/* På desktop viser forsiden kun de første tre billeder. */
+.diary-photos img:nth-child(n + 4) { display: none; }
+.diary-button { position: absolute; left: 0; bottom: 0; margin: 0; }
+@media (max-width: 1000px) and (min-width: 701px) {
+    .diary-inner { column-gap: 25px; padding-bottom: 60px; }
+    .diary-photos { gap: 16px; }
+    .diary-photos img { height: 185px; }
+    .diary-copy { flex-basis: 25%; }
+    .diary-button { bottom: 0; }
+}
+@media (max-width: 700px) {
+    .diary { padding-block: 28px; }
+    .diary-inner { flex-direction: column; gap: 20px; }
+    .diary-copy { flex: auto; }
+    .diary-copy p { margin-top: 12px; }
+    .diary-photos { flex: auto; flex-wrap: wrap; width: 100%; gap: 12px; }
+    .diary-photos img, .diary-photos img:nth-child(n + 4) { display: block; flex: 0 0 calc((100% - 24px) / 3); width: calc((100% - 24px) / 3); height: auto; aspect-ratio: 1; border-radius: 12px; }
+    .diary-button { position: static; align-self: center; margin: 0; }
+}
+
+/* 5. ABOUT ME — portræt, tekst og den lyserøde liste med interesser */
+.about { background: var(--pink-light); }
+.about-inner { display: flex; align-items: center; gap: 50px; width: min(100%, 1440px); margin-inline: auto; padding-right: 44px; }
+.portrait { flex: 0 0 29%; align-self: stretch; min-height: 335px; border-radius: 0; object-fit: cover; }
+.about-inner > .portrait { width: 29%; height: 350px; min-width: 0; object-position: center 35%; }
+.about-copy { flex: 1; padding-block: 38px; }
+.about-copy h2 { margin-bottom: 16px; font-size: 26px; }
+.about-copy p { max-width: 460px; font-size: 12px; line-height: 1.5; }
+.about-copy .button { margin-top: 16px; }
+.skills { display: flex; justify-content: center; align-items: center; gap: 22px; flex: 0 0 29%; padding: 35px 22px; margin: 0; border-radius: 14% 20% 13% 17% / 25% 18% 28% 17%; background: var(--pink); color: var(--blue); list-style: none; transform: rotate(1deg); }
+.skills li { display: flex; flex-direction: column; align-items: center; gap: 7px; font-size: 11px; transform: rotate(-1deg); }
+.skills svg { width: 33px; height: 33px; }
+@media (max-width: 1000px) {
+    .about-inner { gap: 25px; padding-right: 30px; }
+    .skills { gap: 12px; padding-inline: 16px; }
+    .skills svg { width: 26px; height: 26px; }
+}
+@media (max-width: 700px) {
+    .about-inner { flex-wrap: wrap; gap: 18px; padding: 22px 16px 28px; align-items: flex-start; }
+    .portrait { flex-basis: 35%; min-height: 170px; border-radius: 12px; }
+    .about-inner > .portrait { width: 35%; height: 200px; }
+    .about-copy { flex: 1; padding: 0; }
+    .about-copy h2 { font-size: 24px; margin-bottom: 10px; }
+    .about-copy p { font-size: 11px; }
+    .about-copy p + p { display: none; }
+    .about-copy .button { font-size: 11px; padding-inline: 10px; }
+    .skills { flex: 0 0 100%; gap: 30px; padding: 22px; }
+    .skills svg { width: 28px; height: 28px; }
+}
+
+/* 6. FOOTER — det blå papirbillede ligger bag teksten. */
+.site-footer { position: relative; isolation: isolate; color: white; margin-top: 0; padding-top: 30px; }
+main:has(.about) + .site-footer { background-color: var(--pink-light); }
+.site-footer::before { content: ""; position: absolute; z-index: -1; inset: -34px 0 0; background: url("assets/bottomline.png") center bottom -14px / 102% 270px no-repeat; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; min-height: 65px; font-size: 10px; }
+@media (max-width: 700px) {
+    .site-footer { padding-top: 12px; }
+    .site-footer::before { background-size: 102% 195px; background-position: center bottom -10px; }
+    .footer-inner { min-height: 50px; font-size: 9px; }
+}
+
+/* 7. UNDERSIDER — projekter, galleri, om mig og kontakt */
+.subpage { min-height: calc(100vh - 160px); padding-block: 65px 100px; }
+.page-intro { max-width: 660px; margin-bottom: 42px; }
+.eyebrow { margin-bottom: 14px; color: var(--pink-text); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
+.page-intro h1 { margin-bottom: 20px; }
+.subpage > .button { margin-top: 32px; }
+.editor-note { margin-top: 25px; color: #616161; font-size: 13px; }
+/* Diary-galleriet har fem små billeder pr. række på brede skærme. */
+.gallery { --tile-width: calc((100% - 64px) / 5); display: flex; flex-wrap: wrap; gap: 16px; }
+.gallery img { flex: 0 0 var(--tile-width); width: var(--tile-width); height: auto; aspect-ratio: 4 / 5; border-radius: 12px; }
+@media (max-width: 1000px) { .gallery { --tile-width: calc((100% - 48px) / 4); } }
+/* ABOUT ME 2. Portræt og introduktion — samme rækkefølge som aboutme.html. */
+.about-detail { display: flex; align-items: flex-start; gap: 56px; }
+.about-detail .portrait { flex: 0 0 35%; width: 35%; height: auto; min-height: 0; border-radius: 14px; }
+.about-detail-copy { flex: 1; min-width: 0; max-width: 660px; font-size: 16px; line-height: 1.9; }
+.about-detail-copy p + p { margin-top: 18px; }
+.about-greeting { font-size: 19px; line-height: 1.6; }
+/* ABOUT ME 3. Kreativitet — teksten over collagen. */
+.about-creativity { margin-top: 56px; }
+.about-creativity h2 { margin-bottom: 20px; }
+.about-creativity > p { max-width: 850px; font-size: 16px; line-height: 1.9; }
+/* ABOUT ME 4. Collage — tre kolonner med flexbox og plads til nye billeder. */
+/* Centrér også en ufuldstændig række, så de sidste felter står samlet. */
+.creative-collage { display: flex; flex-wrap: wrap; justify-content: center; gap: 26px 24px; margin-top: 28px; }
+.creative-item { flex: 0 0 calc((100% - 48px) / 3); min-width: 0; }
+.creative-item img { width: 100%; height: auto; aspect-ratio: 4 / 3; border-radius: 14px; object-fit: contain; background: var(--pink-light); }
+.creative-item figcaption { margin-top: 10px; color: var(--heading-blue); font-size: 13px; }
+/* ABOUT ME 5. Kontaktknappen bruger den fælles .button. */
+.contact-list { display: flex; flex-wrap: wrap; gap: 24px; }
+.contact-item { flex: 0 0 calc(50% - 12px); padding-block: 25px; border-top: 1px solid #153c9133; }
+.contact-item h2 { font-size: 26px; margin-bottom: 12px; }
+@media (max-width: 700px) {
+    .subpage { padding-block: 40px 75px; }
+    .subpage .project-list { flex-direction: column; overflow: visible; }
+    .subpage .project-card { flex: auto; }
+    .gallery { --tile-width: calc((100% - 16px) / 3); gap: 8px; }
+    .about-detail { flex-direction: column; gap: 25px; }
+    .about-detail .portrait { flex: auto; width: min(100%, 400px); height: auto; min-height: 0; }
+    .about-detail-copy, .about-creativity > p { font-size: 14px; line-height: 1.8; }
+    .about-greeting { font-size: 17px; }
+    .about-creativity { margin-top: 36px; }
+    .creative-collage { gap: 20px 12px; }
+    .creative-item { flex-basis: calc(50% - 6px); }
+    .contact-item { flex-basis: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { .button { transition: none; } }

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Melina Bastholm — multimedia design, UI/UX, web development and visual design.">
+    <title>Crabby Contrast | Melina Bastholm</title>
+    <!-- Skrifttyper: DM Serif Display til overskrifter og Poppins til brødtekst. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="projects.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- 1. HEADER / NAVIGATION — samme navigation på alle sider -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <nav class="navigation container" aria-label="Main navigation">
+            <a class="site-logo" href="index.html" aria-label="Melina Bastholm — home"><img src="assets/logo.png" alt="" width="1931" height="814"></a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" hidden>
+                <img src="assets/brugermenu.png" alt="" width="1609" height="977">
+                <span class="sr-only">Open menu</span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" aria-current="page">Projects</a></li>
+                <li><a href="aboutme.html">About me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main" class="work-page project-detail-page container">
+        <!-- 2. SEMESTERFILTRE — fører tilbage til den filtrerede oversigt -->
+        <nav class="semester-filters" aria-label="Browse projects by semester">
+            <a class="semester-filter" href="projects.html">All</a>
+            <a class="semester-filter" href="projects.html?semester=1">1. semester</a>
+            <a class="semester-filter" href="projects.html?semester=2">2. semester</a>
+            <a class="semester-filter" href="projects.html?semester=3">3. semester</a>
+            <a class="semester-filter" href="projects.html?semester=4">4. semester</a>
+</nav>
+        <a class="back-to-projects" href="projects.html">← All projects</a>
+
+        <article class="project-detail" aria-labelledby="project-title">
+            <!-- 3. PROJEKTINTRO — tekst til venstre, billede og tools til højre -->
+            <div class="project-overview">
+                <div class="project-summary"><h1 id="project-title">Crabby Contrast</h1><p>Crabby Contrast is an interactive learning game designed to teach the basics of color contrast through simple explanations and hands-on challenges.</p>
+                    <section class="project-links" aria-labelledby="links-title"><h2 id="links-title">Links</h2>
+                        <!-- Indsæt rigtige links: <a href="https://...">Website</a>. -->
+                        <ul><li>Website: <span class="link-pending">[Link til projektets website]</span></li><li>Figma: <span class="link-pending">[Link til dit Figma-design]</span></li><li>GitHub: <span class="link-pending">[Link til projektets kode]</span></li></ul>
+                    </section>
+                </div>
+                <div class="project-media"><img src="projekts/crabby.png" alt="Crabby Contrast — project preview" width="2200" height="1422" loading="lazy"><section class="project-tools" aria-labelledby="tools-title"><h2 id="tools-title">Tools</h2><ul class="tools-list"><li>Figma</li><li>Photoshop</li><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></section></div>
+            </div>
+
+            <!-- 4. OPGAVEN — beskrivelse og projekttype -->
+            <section class="project-assignment" aria-labelledby="assignment-title" lang="da"><h2 id="assignment-title">Opgaven</h2>
+                <p>På 1. semester har du arbejdet med grundlæggende metoder og teknologier inden for multimediedesign, herunder frontend, UI, UX, visuel formidling, målgrupper, indhold og proces.</p>
+                <p>I denne prøve tager du udgangspunkt i dine egne erfaringer fra semesteret. Opgaven handler om at omsætte faglig viden til en digital løsning, der giver et sammenhængende forløb for en bruger.</p>
+                <p>Opgaven har en spil-tonet retning. Du må bruge progression, valg, feedback, små udfordringer, levels eller visuelle universer, hvis det styrker formidlingen. Det er ikke et krav at udvikle et spil. Du skal vælge et emne fra 1. semester, formidle det i øjenhøjde og arbejde med indlæring på en måde, hvor brugeren gennem handling får en grundlæggende forståelse af emnet.</p>
+                <p class="project-category">Educational game · 1. semester · Individual project</p>
+            </section>
+
+            <!-- 5. FORDYBELSE — to kolonner med flexbox -->
+            <div class="project-insights">
+                <section aria-labelledby="focus-title"><h2 id="focus-title">Focuspoints</h2>
+                <ol>
+                    <li><strong>UI/UX Design</strong> — Creating a simple and intuitive game interface.</li>
+                    <li><strong>Game Design</strong> — Designing levels, progression, feedback and interactive challenges.</li>
+                    <li><strong>Visual Identity</strong> — Developing the color palette, typography, illustrations and the Crabby mascot.</li>
+                    <li><strong>Color Theory &amp; Contrast</strong> — Turning color and contrast theory into practical, interactive exercises.</li>
+                    <li><strong>Accessibility</strong> — Focusing on readability, color contrast and WCAG principles.</li>
+                    <li><strong>HTML &amp; CSS</strong> — Building and styling the game interface.</li>
+                    <li><strong>JavaScript</strong> — Creating interactions, quizzes and feedback throughout the game.</li>
+                    <li><strong>User Testing</strong> — Testing and evaluating the usability and clarity of the game and its challenges.</li>
+                </ol>
+                </section>
+                <section aria-labelledby="audience-title" lang="da"><h2 id="audience-title">Målgruppen</h2>
+                <h3>Opgivet:</h3><p>Målgruppen er nye studerende eller begyndere på multimediedesignuddannelsen.</p>
+                <h3>Min uddybning:</h3><dl>
+                    <dt>Primær målgruppe</dt><dd>Nye studerende på multimediedesign, der ønsker at forstå kontrastfarver fra første gang på studiet.</dd>
+                    <dt>Alder</dt><dd>18–30.</dd>
+                    <dt>Genre</dt><dd>Interaktivt spil, læringsspil og visuel læring.</dd>
+                    <dt>Stil</dt><dd>Farverig og simpel visuel stil med humoristiske elementer og fokus på tydelig feedback.</dd>
+                    <dt>Gameplay</dt><dd>Interaktive opgaver, hvor spilleren lærer om kontrastfarver gennem små udfordringer og visuelle problemstillinger.</dd>
+                    <dt>Teknologi-erfaring</dt><dd>Har typisk erfaring med digitale platforme og computere i hverdagen.</dd>
+                    <dt>Motivation</dt><dd>At lære gennem praksis frem for teori, modtage hurtig og tydelig feedback og udvikle forståelse for UI/UX og accessibility.</dd>
+                </dl>
+                </section>
+            </div>
+        </article>
+    </main>
+    <!-- 6. FOOTER — bottomline.png indsættes via style.css -->
+    <footer class="site-footer">
+        <div class="container footer-inner"><span>EST. 2026</span><a href="index.html">Melina Bastholm</a></div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Melina Bastholm — multimedia design, UI/UX, web development and visual design.">
+    <title>UNO – Mobile | Melina Bastholm</title>
+    <!-- Skrifttyper: DM Serif Display til overskrifter og Poppins til brødtekst. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="projects.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- 1. HEADER / NAVIGATION — samme navigation på alle sider -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <nav class="navigation container" aria-label="Main navigation">
+            <a class="site-logo" href="index.html" aria-label="Melina Bastholm — home"><img src="assets/logo.png" alt="" width="1931" height="814"></a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" hidden>
+                <img src="assets/brugermenu.png" alt="" width="1609" height="977">
+                <span class="sr-only">Open menu</span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" aria-current="page">Projects</a></li>
+                <li><a href="aboutme.html">About me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main" class="work-page project-detail-page container">
+        <!-- 2. SEMESTERFILTRE — fører tilbage til den filtrerede oversigt -->
+        <nav class="semester-filters" aria-label="Browse projects by semester">
+            <a class="semester-filter" href="projects.html">All</a>
+            <a class="semester-filter" href="projects.html?semester=1">1. semester</a>
+            <a class="semester-filter" href="projects.html?semester=2">2. semester</a>
+            <a class="semester-filter" href="projects.html?semester=3">3. semester</a>
+            <a class="semester-filter" href="projects.html?semester=4">4. semester</a>
+</nav>
+        <a class="back-to-projects" href="projects.html">← All projects</a>
+
+        <article class="project-detail" aria-labelledby="project-title">
+            <!-- 3. PROJEKTINTRO — tekst til venstre, billede og tools til højre -->
+            <div class="project-overview">
+                <div class="project-summary"><h1 id="project-title">UNO – Mobile</h1><p>UNO – Mobile brings the classic card game to a digital experience, allowing players to enjoy UNO alone or together with friends.</p>
+                    <section class="project-links" aria-labelledby="links-title"><h2 id="links-title">Links</h2>
+                        <!-- Indsæt rigtige links: <a href="https://...">Website</a>. -->
+                        <ul><li>Website: <span class="link-pending">[Link til projektets website]</span></li><li>Figma: <span class="link-pending">[Link til dit Figma-design]</span></li><li>GitHub: <span class="link-pending">[Link til projektets kode]</span></li></ul>
+                    </section>
+                </div>
+                <div class="project-media"><img src="projekts/uno.png" alt="UNO – Mobile — project preview" width="702" height="1440" loading="lazy"><section class="project-tools" aria-labelledby="tools-title"><h2 id="tools-title">Tools</h2><p>Skriv de værktøjer og teknologier, du har brugt i projektet.</p></section></div>
+            </div>
+
+            <!-- 4. OPGAVEN — beskrivelse og projekttype -->
+            <section class="project-assignment" aria-labelledby="assignment-title" lang="da"><h2 id="assignment-title">Opgaven</h2>
+                <!-- Indsæt opgavebeskrivelsen her. -->
+                <p>Beskriv opgaven her: Hvad gik projektet ud på, hvilket problem skulle løses, og hvilke krav skulle løsningen opfylde?</p>
+                <p class="project-category">Web development · 1. semester · Individuelt projekt / gruppeprojekt</p>
+            </section>
+
+            <!-- 5. FORDYBELSE — to kolonner med flexbox -->
+            <div class="project-insights">
+                <section aria-labelledby="focus-title"><h2 id="focus-title">Focuspoints</h2>
+                <!-- Tilføj fx designproces, kode og brugertest som li-elementer. -->
+                <p>Beskriv dine fokuspunkter her, fx idéudvikling, visuel identitet, UI/UX, kodning og brugertest. Fortæl, hvad du arbejdede med, og hvad du lærte undervejs.</p>
+                </section>
+                <section aria-labelledby="audience-title" lang="da"><h2 id="audience-title">Målgruppen</h2>
+                <!-- Beskriv projektets målgruppe her. -->
+                <p>Beskriv målgruppen her: Hvem er brugerne, hvilke behov har de, og hvordan har du tilpasset løsningen til dem?</p>
+                </section>
+            </div>
+        </article>
+    </main>
+    <!-- 6. FOOTER — bottomline.png indsættes via style.css -->
+    <footer class="site-footer">
+        <div class="container footer-inner"><span>EST. 2026</span><a href="index.html">Melina Bastholm</a></div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,107 @@
+/* PROJEKTSIDER — indlæses efter style.css.
+   Fælles farver, navigation, knapper og footer står stadig i style.css.
+   A. Oversigt: 2. Intro → 3. Filtre → 4. Kort.
+   B. Projektdetaljer: 2. Filtre → 3. Intro/links/tools → 4. Opgave → 5. Fordybelse. */
+
+/* A2. OVERSIGT / INTRO */
+.work-page { padding-block: 52px 74px; min-height: calc(100vh - 157px); color: var(--blue); }
+.work-intro { margin: 0 22px 42px; }
+.work-intro h1 { font-size: 40px; margin-bottom: 17px; }
+.work-intro > p { color: var(--text); font-size: 12px; }
+
+/* A3 / B2. SEMESTERFILTRE — virker også på projektdetaljesider */
+.semester-filters { display: flex; flex-wrap: wrap; gap: 18px; margin: 0 18px 14px; }
+.semester-filters[hidden] { display: none; }
+.semester-filter { display: inline-flex; align-items: center; justify-content: center; min-width: 124px; min-height: 34px; padding: 8px 16px; border: 2px solid transparent; border-radius: 9px; background: var(--pink); color: #202020; font-size: 11px; font-weight: 700; line-height: 1.2; text-transform: uppercase; cursor: pointer; }
+.semester-filter:hover { background: #f77fa9; }
+.semester-filter[aria-pressed="true"] { border-color: var(--blue); }
+
+/* A4. PROJEKTKORT — flex-wrap giver tre, to eller én kolonne */
+.work-list-heading { margin: 0 20px 48px; font-family: var(--font-heading); font-size: 14px; font-weight: 400; letter-spacing: .4px; text-transform: uppercase; }
+.work-list { display: flex; flex-wrap: wrap; gap: 10px; }
+.work-card { display: flex; flex-direction: column; align-items: flex-start; flex: 0 0 calc((100% - 20px) / 3); min-width: 0; padding: 18px 13px 16px; border: 5px solid #879bc2; border-radius: 12px; background: #fcf2f6; }
+.work-card[hidden] { display: none; }
+.work-image-link { align-self: center; width: 94%; margin-bottom: 13px; border-radius: 12px; }
+.project-image { width: 100%; aspect-ratio: 1.9; border-radius: 12px; }
+.work-image-link img { width: 100%; height: auto; aspect-ratio: 1.9; border-radius: 12px; object-fit: contain; background: var(--pink-light); }
+.work-image-link:hover { outline: 2px solid var(--blue); outline-offset: 3px; }
+.work-card h2 { margin-bottom: 5px; font-family: var(--font-heading); font-size: 16px; font-weight: 400; line-height: 1.25; }
+.work-card h2 a:hover { text-decoration: underline; }
+.work-card > p { margin-bottom: 14px; font-size: 11px; line-height: 1.5; }
+.button-project { align-self: center; min-width: 125px; min-height: 34px; margin-top: auto; padding: 7px 20px; border-radius: 9px; background: #d62969; font-size: 12px; font-weight: 700; }
+.button-project:hover { background: #b91d56; }
+.empty-projects { padding: 55px 20px; border: 2px dashed #879bc2; border-radius: 12px; text-align: center; }
+
+/* B2. PROJEKTDETALJER / FILTRE OG TILBAGELINK */
+.project-detail-page { padding-top: 65px; }
+.project-detail-page .semester-filters { margin-left: 0; margin-bottom: 18px; }
+.back-to-projects { display: inline-block; margin: 0 0 20px; font-size: 12px; }
+.back-to-projects:hover { text-decoration: underline; }
+.project-detail { max-width: 1000px; margin-inline: auto; padding: 28px 30px 44px; border: 5px solid #879bc2; border-radius: 12px; background: #fcf2f6; font-size: 12px; line-height: 1.6; }
+.project-detail h2 { font-family: var(--font-heading); font-size: 17px; font-weight: 400; line-height: 1.25; }
+.project-detail h3 { font-family: var(--font-heading); font-size: 13px; line-height: 1.4; }
+.project-detail p { overflow-wrap: anywhere; }
+
+/* B3. PROJEKTINTRO — links under introen og tools under billedet */
+.project-overview { display: flex; align-items: flex-start; gap: 45px; margin-bottom: 26px; }
+.project-summary { flex: 1; min-width: 0; }
+.project-summary h1 { margin: -5px 0 40px; color: var(--blue); font-family: var(--font-heading); font-size: clamp(28px, 3vw, 40px); font-weight: 400; letter-spacing: -.8px; }
+.project-summary > p { margin-bottom: 30px; }
+.project-links ul { margin: 0; padding: 0; list-style: none; }
+.project-links a { text-decoration: underline; overflow-wrap: anywhere; }
+.link-pending { color: #596682; }
+.project-media { flex: 0 0 38%; min-width: 0; }
+.project-media > img { width: 100%; height: auto; aspect-ratio: 1.9; border-radius: 12px; object-fit: contain; background: var(--pink-light); }
+.project-tools { margin-top: 9px; }
+.tools-list { display: flex; flex-wrap: wrap; gap: 0 7px; margin: 0; padding: 0; list-style: none; font-size: 11px; }
+.tools-list li + li::before { content: "·"; margin-right: 7px; }
+
+/* B4. OPGAVE OG PROJEKTTYPE */
+.project-assignment { margin-bottom: 30px; }
+.project-assignment > p + p { margin-top: 6px; }
+.project-category { padding-top: 5px; text-align: center; font-size: 11px; font-weight: 600; }
+
+/* B5. PROJEKTBILLEDER — ekstra skærmbilleder under Copenhagen Unfolded-beskrivelsen */
+.project-gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-bottom: 30px; }
+.project-gallery img { width: min(100%, 250px, (100% - 32px) / 3); height: auto; align-self: flex-start; border-radius: 10px; }
+
+/* B6. FORDYBELSE — focuspoints og målgruppe */
+.project-insights { display: flex; align-items: flex-start; gap: 50px; }
+.project-insights > section { flex: 1; min-width: 0; }
+.project-insights ol { margin: 0; padding-left: 18px; }
+.project-insights li { margin-bottom: 4px; }
+.project-insights strong { font-weight: 600; }
+.project-insights h3:not(:first-child) { margin-top: 12px; }
+.project-insights dl { margin: 0; }
+.project-insights dt { margin-top: 5px; font-weight: 600; }
+.project-insights dd { margin: 0; }
+
+/* MOBIL OG TABLET — samme rækkefølge som HTML'en */
+@media (max-width: 1000px) {
+    .semester-filters { gap: 10px; margin-inline: 0; }
+    .semester-filter { min-width: 110px; }
+    .work-card { flex-basis: calc((100% - 10px) / 2); }
+    .project-overview { gap: 25px; }
+    .project-insights { gap: 28px; }
+}
+@media (max-width: 700px) {
+    .work-page { padding-block: 32px 65px; }
+    .work-intro { margin: 0 0 28px; }
+    .work-intro h1 { font-size: 34px; }
+    .semester-filters { gap: 8px; }
+    .semester-filter { flex: 1 0 calc((100% - 16px) / 3); min-width: 0; min-height: 40px; padding-inline: 6px; font-size: 10px; }
+    .work-list-heading { margin: 22px 0 25px; font-size: 12px; }
+    .work-list { gap: 14px; }
+    .work-card { flex-basis: 100%; padding: 17px; border-width: 4px; }
+    .work-card > p { font-size: 12px; }
+    .work-card h2 { font-size: 19px; }
+    .button-project { min-height: 40px; }
+    .project-detail { padding: 22px 17px 28px; border-width: 4px; }
+    .project-overview { flex-direction: column; gap: 22px; }
+    .project-summary h1 { margin-bottom: 22px; font-size: 30px; }
+    .project-summary > p { margin-bottom: 22px; }
+    .project-media { flex: auto; width: 100%; }
+    .project-gallery img { width: min(100%, 250px); }
+    .project-insights { flex-direction: column; gap: 25px; }
+    .project-insights > section { flex: auto; width: 100%; }
+}

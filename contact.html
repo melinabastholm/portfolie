@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Melina Bastholm — multimedia design, UI/UX, web development and visual design.">
+    <title>Contact | Melina Bastholm</title>
+    <!-- Skrifttyper: DM Serif Display til overskrifter og Poppins til brødtekst. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- 1. HEADER / NAVIGATION — samme navigation på alle sider -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <nav class="navigation container" aria-label="Main navigation">
+            <a class="site-logo" href="index.html" aria-label="Melina Bastholm — home"><img src="assets/logo.png" alt="" width="1931" height="814"></a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" hidden>
+                <img src="assets/brugermenu.png" alt="" width="1609" height="977">
+                <span class="sr-only">Open menu</span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="aboutme.html">About me</a></li>
+                <li><a href="contact.html" aria-current="page">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main" class="subpage container">
+        <!-- KONTAKT — udskift pladsholderne med dine oplysninger.
+             Mail: <a href="mailto:din@email.dk">din@email.dk</a>
+             Telefon: <a href="tel:+45XXXXXXXX">+45 XX XX XX XX</a>
+             Sociale medier: <a href="https://...">Se min profil</a> -->
+        <div class="page-intro"><p class="eyebrow">Let’s connect</p><h1>Get in touch</h1><p>You are always welcome to get in touch! I usually respond within 1–2 days. If you haven’t heard back from me, feel free to send me a text message, and I’ll get back to you as soon as possible.</p></div>
+        <div class="contact-list">
+        <section class="contact-item" id="email"><h2>Email</h2><p>melinabastholm@gmail.com</p></section><section class="contact-item" id="phone"><h2>Phone</h2><p>+45 26818271</p></section><section class="contact-item" id="linkedin"><h2>LinkedIn</h2><p>www.linkedin.com/in/melina-bastholm-03b705252</p></section><section class="contact-item" id="github"><h2>GitHub</h2><p>https://github.com/melinabastholm</p></section>
+        </div>
+        <a class="button" href="projects.html">Explore my projects <span aria-hidden="true">→</span></a>
+    </main>
+    <!-- 6. FOOTER — bottomline.png indsættes via style.css -->
+    <footer class="site-footer">
+        <div class="container footer-inner"><span>EST. 2026</span><a href="index.html">Melina Bastholm</a></div>
+    </footer>
+</body>
+</html>

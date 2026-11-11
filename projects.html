@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Melina Bastholm — multimedia design, UI/UX, web development and visual design.">
+    <title>Projects | Melina Bastholm</title>
+    <!-- Skrifttyper: DM Serif Display til overskrifter og Poppins til brødtekst. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="projects.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- 1. HEADER / NAVIGATION — samme navigation på alle sider -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <nav class="navigation container" aria-label="Main navigation">
+            <a class="site-logo" href="index.html" aria-label="Melina Bastholm — home"><img src="assets/logo.png" alt="" width="1931" height="814"></a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" hidden>
+                <img src="assets/brugermenu.png" alt="" width="1609" height="977">
+                <span class="sr-only">Open menu</span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" aria-current="page">Projects</a></li>
+                <li><a href="aboutme.html">About me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main" class="work-page container">
+        <!-- 2. INTRODUKTION -->
+        <div class="work-intro"><h1>Projects</h1><p>Here is some of the work I have done both in school and in my spare time.</p></div>
+
+        <!-- 3. SEMESTERFILTRE — JS skjuler de kort, der ikke matcher.
+             Uden JavaScript kan alle projekterne stadig åbnes. -->
+        <div class="semester-filters" role="group" aria-label="Filter projects by semester" hidden>
+            <button class="semester-filter" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="semester-filter" type="button" data-filter="1" aria-pressed="false">1. semester</button>
+            <button class="semester-filter" type="button" data-filter="2" aria-pressed="false">2. semester</button>
+            <button class="semester-filter" type="button" data-filter="3" aria-pressed="false">3. semester</button>
+            <button class="semester-filter" type="button" data-filter="4" aria-pressed="false">4. semester</button>
+</div>
+
+        <!-- 4. PROJEKTKORT — flexbox med tre kolonner på desktop -->
+        <h2 class="work-list-heading">Udvalgte projekter</h2>
+        <p class="sr-only" id="filter-status" role="status" aria-live="polite" aria-atomic="true"></p>
+        <!-- data-semester afgør, hvilket filter projektkortet vises under. -->
+        <div class="work-list">
+            <article class="work-card" data-semester="1">
+                <a class="work-image-link" href="project-crabby-contrast.html" aria-label="Read about Crabby Contrast">
+                    <img src="projekts/crabby.png" alt="Crabby Contrast — project preview" width="2200" height="1422" loading="lazy">
+                </a>
+                <h2><a href="project-crabby-contrast.html">Crabby Contrast</a></h2>
+                <p>Crabby Contrast is an interactive learning game designed to teach the basics of color contrast through simple explanations and hands-on challenges.</p>
+                <a class="button button-project" href="project-crabby-contrast.html" aria-label="See more about Crabby Contrast">See more!</a>
+            </article>
+            <article class="work-card" data-semester="1">
+                <a class="work-image-link" href="project-feed-the-animals.html" aria-label="Read about Feed the Animals">
+                    <img src="projekts/feed%20the%20animals.png" alt="Feed the Animals — project preview" width="630" height="304" loading="lazy">
+                </a>
+                <h2><a href="project-feed-the-animals.html">Feed the Animals</a></h2>
+                <p>Feed the Animals is an interactive game designed around simple choices, where players learn which foods belong to different animals through playful challenges.</p>
+                <a class="button button-project" href="project-feed-the-animals.html" aria-label="See more about Feed the Animals">See more!</a>
+            </article>
+            <article class="work-card" data-semester="1">
+                <a class="work-image-link" href="project-uno.html" aria-label="Read about UNO – Mobile">
+                    <img src="projekts/uno.png" alt="UNO – Mobile — project preview" width="702" height="1440" loading="lazy">
+                </a>
+                <h2><a href="project-uno.html">UNO – Mobile</a></h2>
+                <p>UNO – Mobile brings the classic card game to a digital experience, allowing players to enjoy UNO alone or together with friends.</p>
+                <a class="button button-project" href="project-uno.html" aria-label="See more about UNO – Mobile">See more!</a>
+            </article>
+            <article class="work-card" data-semester="2">
+                <a class="work-image-link" href="project-decoria.html" aria-label="Read about Decoria">
+                    <img src="projekts/decoria.png" alt="Decoria — project preview" width="982" height="886" loading="lazy">
+                </a>
+                <h2><a href="project-decoria.html">Decoria</a></h2>
+                <p>Interakctive posters, that save you space on your desk when its overfilled.</p>
+                <a class="button button-project" href="project-decoria.html" aria-label="See more about Decoria">See more!</a>
+            </article>
+            <article class="work-card" data-semester="2">
+                <a class="work-image-link" href="project-cozy-reads.html" aria-label="Read about Cozy Reads">
+                    <img src="projekts/cozyreads.png" alt="Cozy Reads — project preview" width="2914" height="1542" loading="lazy">
+                </a>
+                <h2><a href="project-cozy-reads.html">Cozy Reads</a></h2>
+                <p>Working with AI on a booktracker</p>
+                <a class="button button-project" href="project-cozy-reads.html" aria-label="See more about Cozy Reads">See more!</a>
+            </article>
+            <article class="work-card" data-semester="2">
+                <a class="work-image-link" href="project-copenhagen-unfolded.html" aria-label="Read about Copenhagen Unfolded">
+                    <img src="projekts/chp%20unfolded.png" alt="Copenhagen Unfolded — project preview" width="702" height="1440" loading="lazy">
+                </a>
+                <h2><a href="project-copenhagen-unfolded.html">Copenhagen Unfolded</a></h2>
+                <p lang="da">A tourguide for tourist in Copenhagen.</p>
+                <a class="button button-project" href="project-copenhagen-unfolded.html" aria-label="See more about Copenhagen Unfolded">See more!</a>
+            </article>
+            <article class="work-card" data-semester="2">
+                <a class="work-image-link" href="project-musikvideo.html" aria-label="Read about Musikvideo">
+                    <img src="projekts/musikvideo.png" alt="Musikvideo — project preview" width="1524" height="856" loading="lazy">
+                </a>
+                <h2><a href="project-musikvideo.html">Musicvideo</a></h2>
+                <p lang="da">Musicvideo.</p>
+                <a class="button button-project" href="project-musikvideo.html" aria-label="See more about Musikvideo">See more!</a>
+            </article>
+            <article class="work-card" data-semester="2">
+                <a class="work-image-link" href="project-datadrevet-ux.html" aria-label="Read about Datadrevet UX">
+                    <img src="projekts/datadrevet%20ux.png" alt="Datadrevet UX — project preview" width="1738" height="1130" loading="lazy">
+                </a>
+                <h2><a href="project-datadrevet-ux.html">Datadrevet UX</a></h2>
+                <p lang="da">UX, where the data is the most important</p>
+                <a class="button button-project" href="project-datadrevet-ux.html" aria-label="See more about Datadrevet UX">See more!</a>
+            </article>
+        </div>
+        <p class="empty-projects" hidden>No projects in this semester yet. Choose “All” to explore the other projects.</p>
+    </main>
+    <!-- 6. FOOTER — bottomline.png indsættes via style.css -->
+    <footer class="site-footer">
+        <div class="container footer-inner"><span>EST. 2026</span><a href="index.html">Melina Bastholm</a></div>
+    </footer>
+</body>
+</html>

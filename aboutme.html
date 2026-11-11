@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Melina Bastholm — multimedia design, UI/UX, web development and visual design.">
+    <title>About me | Melina Bastholm</title>
+    <!-- Skrifttyper: DM Serif Display til overskrifter og Poppins til brødtekst. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- 1. HEADER / NAVIGATION — samme navigation på alle sider -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <nav class="navigation container" aria-label="Main navigation">
+            <a class="site-logo" href="index.html" aria-label="Melina Bastholm — home"><img src="assets/logo.png" alt="" width="1931" height="814"></a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" hidden>
+                <img src="assets/brugermenu.png" alt="" width="1609" height="977">
+                <span class="sr-only">Open menu</span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="aboutme.html" aria-current="page">About me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main" class="subpage about-page container">
+        <!-- 2. ABOUT ME — tekst fra din skitse og dit portræt -->
+        <div class="page-intro"><h1>About me</h1></div>
+        <div class="about-detail">
+            <img class="portrait" src="assets/Mig.png" alt="Melina Bastholm beside a light-up reindeer" width="1012" height="1120">
+            <div class="about-detail-copy">
+                <p class="about-greeting">Hi, I’m Melina Søndergaard Bastholm</p>
+                <p>I’m a Multimedia Design student with a strong interest in both design and development. I enjoy working across the creative process, from ideas and visual concepts to UI/UX design and development.</p>
+                <p>I focus on creating digital experiences that balance aesthetics, functionality and usability. I’m always curious to explore new tools, technologies and creative approaches while continuing to develop my skills.</p>
+            </div>
+        </div>
+
+        <!-- 3. KREATIVITET — introduktion til dine fritidsprojekter -->
+        <section class="about-creativity" aria-labelledby="creativity-title">
+            <h2 id="creativity-title">My creative side</h2>
+            <p>I have always been very creative in many different ways, from dancing, sewing, knitting, painting and drawing to coloring, experimenting with makeup and much more. Below, you’ll find a little collage of some of the things I have been working on in my spare time.</p>
+
+            <!-- 4. COLLAGE — billeder fra assets-mappen.
+                 Kopiér et figure-element for at tilføje flere billeder. -->
+            <div class="creative-collage">
+                <figure class="creative-item">
+                    <img src="assets/IMG_3396.JPG" alt="Colourful eye makeup with pink, blue and yellow details and small rhinestones" width="1242" height="580" loading="lazy">
+                    <figcaption>Makeup</figcaption>
+                </figure>
+                <figure class="creative-item">
+                    <img src="assets/kniting.png" alt="Melina’s knitting project" width="1086" height="1448" loading="lazy">
+                    <figcaption>Knitting</figcaption>
+                </figure>
+                <figure class="creative-item">
+                    <img src="assets/Painting.jpg" alt="Melina’s painting" width="1512" height="1483" loading="lazy">
+                    <figcaption>Painting</figcaption>
+                </figure>
+                <figure class="creative-item">
+                    <img src="assets/Drawing.jpg" alt="Melina’s drawing" width="3547" height="4733" loading="lazy">
+                    <figcaption>Drawing</figcaption>
+                </figure>
+                <figure class="creative-item">
+                    <img src="assets/Dancing.JPG" alt="Photo from Melina’s dance activities" width="1080" height="1440" loading="lazy">
+                    <figcaption>Dance</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- 5. KONTAKT -->
+        <a class="button" href="contact.html">Let’s get in touch <span aria-hidden="true">→</span></a>
+    </main>
+    <!-- 6. FOOTER — bottomline.png indsættes via style.css -->
+    <footer class="site-footer">
+        <div class="container footer-inner"><span>EST. 2026</span><a href="index.html">Melina Bastholm</a></div>
+    </footer>
+</body>
+</html>
