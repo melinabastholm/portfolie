@@ -68,13 +68,10 @@
 /* B6. FORDYBELSE — focuspoints og målgruppe */
 .project-insights { display: flex; align-items: flex-start; gap: 50px; }
 .project-insights > section { flex: 1; min-width: 0; }
-.project-insights ol { margin: 0; padding-left: 18px; }
+.project-insights ul, .project-insights ol { margin: 8px 0 0; padding-inline-start: 18px; }
 .project-insights li { margin-bottom: 4px; }
 .project-insights strong { font-weight: 600; }
 .project-insights h3:not(:first-child) { margin-top: 12px; }
-.project-insights dl { margin: 0; }
-.project-insights dt { margin-top: 5px; font-weight: 600; }
-.project-insights dd { margin: 0; }
 
 /* MOBIL OG TABLET — samme rækkefølge som HTML'en */
 @media (max-width: 1000px) {
