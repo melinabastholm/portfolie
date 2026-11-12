@@ -36,7 +36,7 @@ svg { width: 24px; height: 24px; }
 a:focus-visible, button:focus-visible { outline: 3px solid var(--heading-blue); outline-offset: 5px; }
 .text-pink { color: var(--pink-text); }
 .image-placeholder { display: flex; justify-content: center; align-items: center; border-radius: 14px; background: var(--grey); color: #535353; text-align: center; }
-.image-placeholder > span:not(.play-icon) { padding: 16px; font-size: 13px; }
+.image-placeholder > span { padding: 16px; font-size: 13px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .skip-link { position: absolute; top: 8px; left: 8px; z-index: 10; padding: 10px; background: var(--cream); transform: translateY(-200%); }
 .skip-link:focus { transform: translateY(0); }
@@ -88,10 +88,19 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--heading-blue); 
 .social-links a:hover { background: var(--heading-blue); }
 .social-links svg { width: 24px; height: 24px; }
 .linkedin-icon { font-family: Arial, sans-serif; font-size: 25px; line-height: 1; font-weight: 700; }
-.showreel { flex: 1; position: relative; flex-direction: column; gap: 40px; aspect-ratio: 4 / 3; max-width: 520px; color: #202020; }
-.play-icon { display: flex; align-items: center; justify-content: center; width: 64px; height: 64px; padding-left: 5px; border-radius: 50%; background: white; font-size: 36px; }
-.showreel figcaption { font-size: 16px; }
-.placeholder-note { display: block; margin-top: 4px; font-size: 11px; color: #595959; }
+/* Showreel — samme video i den lille afspiller og i overlayet. */
+.showreel { flex: 1; min-width: 0; max-width: 520px; overflow: hidden; border-radius: 14px; background: var(--pink-light); }
+.showreel-player { aspect-ratio: 16 / 9; background: #161616; }
+.showreel-player video, .showreel-dialog-player video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #161616; }
+.showreel figcaption { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 14px; }
+.showreel-actions { display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+.showreel button, .showreel-dialog button { border: 0; cursor: pointer; }
+.showreel button[hidden], .showreel-dialog button[hidden] { display: none; }
+.showreel-dialog { width: 80vw; max-height: 80dvh; max-width: none; padding: 0; overflow: auto; border: 0; border-radius: 14px; background: var(--cream); }
+.showreel-dialog::backdrop { background: #17233acc; }
+.showreel-dialog-bar { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 12px; background: var(--cream); }
+.showreel-dialog-bar h2 { font-size: clamp(18px, 3vw, 24px); }
+.showreel-dialog-player video { max-height: calc(80dvh - 56px); }
 /* Det blå hjørne ligger bag indholdet nederst til højre. */
 .hero::after { content: ""; position: absolute; z-index: -1; right: -0.5%; bottom: -10px; width: 54%; height: 240px; background: url("assets/bluecorner.png") right bottom / 100% 100% no-repeat; }
 @media (max-width: 1000px) and (min-width: 701px) {
@@ -107,8 +116,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--heading-blue); 
     .disciplines li + li::before { margin-right: 6px; }
     .hero-tagline { max-width: 320px; margin-inline: auto; font-size: 12px; }
     .social-links { margin-top: 18px; gap: 16px; }
-    .showreel { flex: auto; width: min(100% - 30px, 420px); gap: 30px; }
-    .play-icon { width: 48px; height: 48px; font-size: 27px; }
+    .showreel { flex: auto; width: min(100% - 30px, 420px); }
     .hero::after { width: 118%; height: 140px; bottom: -6px; }
 }
 

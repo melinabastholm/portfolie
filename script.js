@@ -1,7 +1,8 @@
 /* JavaScript følger HTML-rækkefølgen.
    1. Navigation: mobilmenu.
-   2. Projektside: semesterfiltre.
-   3. CV: vis en side i stor størrelse.
+   2. Forside: showreel i stor størrelse.
+   3. Projektside: semesterfiltre.
+   4. CV: vis en side i stor størrelse.
    Resten af indholdet er almindelig HTML og CSS. */
 
 // 1. HEADER / NAVIGATION
@@ -44,7 +45,42 @@ if (menuButton && navLinks) {
 }
 
 
-// 2. PROJEKTSIDE / SEMESTERFILTRE — samme rækkefølge som projects.html
+// 2. FORSIDE / SHOWREEL — flyt afspilleren, så tid og lydindstilling følger med.
+const showreelDialog = document.querySelector('.showreel-dialog');
+const showreelEnlarge = document.querySelector('.showreel-enlarge');
+const showreelPlayer = document.querySelector('.showreel-player');
+
+if (showreelDialog && showreelEnlarge && showreelPlayer && typeof showreelDialog.showModal === 'function') {
+    const video = showreelPlayer.querySelector('video');
+    const largePlayer = showreelDialog.querySelector('.showreel-dialog-player');
+    const soundButtons = document.querySelectorAll('.showreel-sound');
+    showreelEnlarge.hidden = false;
+
+    function updateSoundButtons() {
+        soundButtons.forEach((button) => {
+            button.textContent = video.muted ? 'Unmute' : 'Mute';
+        });
+    }
+
+    soundButtons.forEach((button) => {
+        button.hidden = false;
+        button.addEventListener('click', () => { video.muted = !video.muted; });
+    });
+    video.addEventListener('volumechange', updateSoundButtons);
+    updateSoundButtons();
+
+    showreelEnlarge.addEventListener('click', () => {
+        showreelDialog.showModal();
+        largePlayer.append(video);
+    });
+
+    showreelDialog.addEventListener('close', () => {
+        video.pause();
+        showreelPlayer.append(video);
+    });
+}
+
+// 3. PROJEKTSIDE / SEMESTERFILTRE — samme rækkefølge som projects.html
 const filterGroup = document.querySelector('.semester-filters[role="group"]');
 const workCards = document.querySelectorAll('.work-card');
 const filterStatus = document.querySelector('#filter-status');
@@ -92,7 +128,7 @@ if (filterGroup && workCards.length && filterStatus && emptyProjects) {
     filterProjects(readSemesterFromUrl(), false);
 }
 
-// 3. CV — forstør forhåndsvisningen. Uden JS åbnes billedlinket direkte.
+// 4. CV — forstør forhåndsvisningen. Uden JS åbnes billedlinket direkte.
 const cvDialog = document.querySelector('.cv-dialog');
 
 if (cvDialog && typeof cvDialog.showModal === 'function') {
