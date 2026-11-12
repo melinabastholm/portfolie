@@ -48,8 +48,8 @@
 .project-summary h1 { margin: -5px 0 40px; color: var(--blue); font-family: var(--font-heading); font-size: clamp(28px, 3vw, 40px); font-weight: 400; letter-spacing: -.8px; }
 .project-summary > p { margin-bottom: 30px; }
 .project-links ul { margin: 0; padding: 0; list-style: none; }
-.project-links a { text-decoration: underline; overflow-wrap: anywhere; }
-.link-pending { color: #596682; }
+.project-links a[href] { text-decoration: underline; overflow-wrap: anywhere; }
+.project-links a:not([href]) { color: #596682; }
 .project-media { flex: 0 0 38%; min-width: 0; }
 .project-media > img { width: 100%; height: auto; aspect-ratio: 1.9; border-radius: 12px; object-fit: contain; background: var(--pink-light); }
 .project-tools { margin-top: 9px; }
